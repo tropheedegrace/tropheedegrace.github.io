@@ -7,6 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trophée de Grâce Tabernacle</title>
     <link rel="stylesheet" href="style.css">
+        <!-- Liaison avec le fichier de configuration de l'application -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0b4c8c">
+    
+    <!-- Script pour activer l'application sur le téléphone -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('Application TGT prête !'))
+          .catch((err) => console.log('Erreur application:', err));
+      }
+    </script>
+
 
     <style>
         /* Styles pour les menus déroulants et boutons */
