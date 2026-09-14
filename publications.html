@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - TGT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pub-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .pub-item {
+            display: flex; align-items: center; background: white; padding: 18px 15px;
+            border-radius: 12px; text-decoration: none; color: var(--text-main);
+            border-left: 4px solid var(--gold-bright); box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        .pub-item:active { transform: scale(0.98); }
+        .pub-icon { font-size: 1.8rem; margin-right: 15px; }
+        .pub-details { flex: 1; }
+        .pub-details h3 { font-size: 1rem; margin-bottom: 2px; color: var(--primary-dark); }
+        .pub-details p { font-size: 0.8rem; color: #777; }
+        .pub-badge { font-size: 0.7rem; background: #ebdcb9; padding: 4px 8px; border-radius: 4px; font-weight: bold; color: var(--primary-dark); }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <a href="index.html" style="color: white; text-decoration: none; font-size: 1.2rem;">⬅</a>
+            <h1>Publications</h1>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="app-container">
+        <div class="pub-grid">
+            
+            <!-- Lien vers la page dédiée de la Bible -->
+            <a href="bible.html" class="pub-item">
+                <div class="pub-icon">📖</div>
+                <div class="pub-details">
+                    <h3>La Sainte Bible</h3>
+                    <p>Ancien & Nouveau Testament</p>
+                </div>
+                <span class="pub-badge">LECTURE</span>
+            </a>
+
+            <!-- Lien vers les brochures (la_foi.pdf ou lafoi.pdf que l'on voit dans vos fichiers) -->
+            <a href="brochures.html" class="pub-item">
+                <div class="pub-icon">📚</div>
+                <div class="pub-details">
+                    <h3>Brochures du Prophète</h3>
+                    <p>Messages de William Marrion Branham</p>
+                </div>
+                <span class="pub-badge">PDF</span>
+            </a>
+
+            <!-- Recueil de cantiques écrit -->
+            <a href="recueil.html" class="pub-item">
+                <div class="pub-icon">✍️</div>
+                <div class="pub-details">
+                    <h3>Recueil de Cantiques Écrit</h3>
+                    <p>Paroles complètes des chants</p>
+                </div>
+                <span class="pub-badge">TEXTE</span>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>

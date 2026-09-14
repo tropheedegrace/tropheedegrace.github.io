@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recueil de Cantiques - TGT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .recueil-container {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            text-align: center;
+            margin-top: 20px;
+            border-top: 4px solid var(--gold-bright);
+        }
+        .recueil-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        .recueil-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+        .recueil-desc {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .action-button-recueil {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #d97706; /* Couleur orange/or typique pour PowerPoint */
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+            width: 100%;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+        .action-button-recueil:active {
+            transform: scale(0.97);
+        }
+        .secondary-btn {
+            background: var(--primary-dark);
+            box-shadow: 0 4px 12px rgba(138, 109, 59, 0.2);
+        }
+        .tip-box {
+            background: #fcf9f2;
+            border: 1px dashed #ebdcb9;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: left;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre supérieure fixe avec flèche retour vers publications.html -->
+    <header class="app-header">
+        <div class="header-content">
+            <a href="publications.html" style="color: white; text-decoration: none; font-size: 1.2rem;">⬅</a>
+            <h1>Recueil de Cantiques</h1>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="app-container">
+        
+        <div class="recueil-container">
+            <div class="recueil-icon">📊</div>
+            <h2 class="recueil-title">Recueil des Chants de l'Épouse</h2>
+            <p class="recueil-desc">Version de projection officielle du Tabernacle au format PowerPoint, prête pour les cultes et l'édification.</p>
+            
+            <!-- LIEN VERS LE FICHIER POWERPOINT -->
+            <!-- Remplacez "recueil.pptx" par le nom exact de votre fichier PowerPoint mis dans votre dossier -->
+            <a href="recueil.pptx" target="_blank" class="action-button-recueil">
+                📢 Ouvrir le PowerPoint des Cantiques
+            </a>
+
+            <!-- RACCOURCI VERS L'OUTIL DE PROJECTION INTERNE -->
+            <a href="projection.html" class="action-button-recueil secondary-btn">
+                📺 Utiliser la Régie de l'Application
+            </a>
+
+            <div class="tip-box">
+                💡 <strong>Note pour le technicien :</strong> Si vous ouvrez le fichier PowerPoint depuis un téléphone connecté à un projecteur, lancez le mode "Diaporama" de votre application mobile (PowerPoint ou Google Slides) pour un affichage plein écran optimal à l'église.
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culte en Direct - TGT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .live-box { background: white; padding: 30px 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); text-align: center; margin-top: 20px; }
+        .live-status { display: inline-flex; align-items: center; gap: 8px; background: #ffebeb; color: #ff0000; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin-bottom: 20px; animation: pulse 2s infinite; }
+        .live-title { font-size: 1.3rem; font-weight: bold; color: var(--primary-dark); margin-bottom: 10px; }
+        .live-desc { font-size: 0.9rem; color: #666; line-height: 1.6; margin-bottom: 25px; }
+        .youtube-btn { display: inline-flex; align-items: center; justify-content: center; background: #ff0000; color: white; text-decoration: none; padding: 14px 24px; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3); transition: transform 0.2s; }
+        .youtube-btn:active { transform: scale(0.97); }
+        @keyframes pulse { 0% { opacity: 0.6; } 50% { opacity: 1; } 100% { opacity: 0.6; } }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-content">
+            <a href="index.html" style="color: white; text-decoration: none; font-size: 1.2rem;">⬅</a>
+            <h1>Diffusion en Direct</h1>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="app-container">
+        
+        <div class="live-box">
+            <div class="live-status">🔴 DIRECT SATELLITE YOUTUBE</div>
+            <h2 class="live-title">Suivez nos Cultes en Direct</h2>
+            <p class="live-desc">Rejoignez la communauté en ligne du Trophée de Grâce Tabernacle pour chanter, louer et écouter la Parole inspirée du temps de la fin.</p>
+            
+            <!-- REMPLACEZ LE LIEN CI-DESSOUS PAR LE LIEN DE VOTRE CHAÎNE YOUTUBE -->
+            <a href="https://youtube.com" target="_blank" class="youtube-btn">
+                ▶️ Ouvrir le Direct sur YouTube
+            </a>
+        </div>
+
+    </main>
+
+</body>
+</html>

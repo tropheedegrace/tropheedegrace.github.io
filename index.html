@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trophée de Grâce Tabernacle</title>
     <link rel="stylesheet" href="style.css">
-        <!-- Liaison avec le fichier de configuration de l'application -->
+    
+    <!-- Liaison avec le fichier de configuration de l'application -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#0b4c8c">
+    <meta name="theme-color" content="#8a6d3b">
     
     <!-- Script pour activer l'application sur le téléphone -->
     <script>
@@ -19,786 +19,111 @@
           .catch((err) => console.log('Erreur application:', err));
       }
     </script>
-
-
-    <style>
-        /* Styles pour les menus déroulants et boutons */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #0b4c8c;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            z-index: 10;
-            border-radius: 4px;
-            margin-top: 5px;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            font-size: 0.85rem;
-            text-transform: none;
-            border-bottom: 1px solid #07325d;
-        }
-
-        .dropdown-content a:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #00bfff;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        nav a:hover {
-            color: #00bfff !important;
-        }
-    </style>
 </head>
 
-<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #333;">
+<body>
 
-    <!-- BARRE DE NAVIGATION STYLE PROFESSIONNEL AVEC RECTIFICATIONS ET BOUTON EN DIRECT -->
-
-    <header style="background-color: #0b4c8c; display: flex; justify-content: space-between; align-items: center; padding: 10px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); flex-wrap: wrap;">
-
-        <!-- Logo et Titre à gauche -->
-
-        <div style="display: flex; align-items: center; gap: 15px;">
-
-            <img src="logo.png" alt="Logo TGT" style="height: 55px; width: 55px; border-radius: 50%; object-fit: cover; border: 2px solid white;">
-
-            <span style="color: white; font-size: 1.4rem; font-weight: bold; letter-spacing: 0.5px;">
-                Trophée de Grâce
-            </span>
-
+    <!-- BARRE SUPÉRIEURE APPLICATION FIXE -->
+    <header class="app-header">
+        <div class="header-content">
+            <span class="menu-icon">☰</span>
+            <h1>Trophée de Grâce Tabernacle</h1>
+            <!-- Badge dynamique de version -->
+            <span id="badge-statut" class="status-badge free-badge">Version Gratuite</span>
         </div>
-
-        <!-- Menu Principal au centre avec menus déroulants (dropdowns) -->
-
-        <nav style="display: flex; gap: 20px; align-items: center;">
-
-            <a href="#accueil" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                Accueil
-            </a>
-
-            <a href="#actualite" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                Actualité
-            </a>
-
-            <!-- Menu A Propos Déroulant -->
-
-            <div class="dropdown">
-
-                <a href="#propos" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                    A propos ▼
-                </a>
-
-                <div class="dropdown-content">
-
-                    <a href="#propos">
-                        Historique de l'Église
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Menu Multimedia Déroulant -->
-
-            <div class="dropdown">
-
-                <a href="#multimedia" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Multimedia ▼
-                </a>
-
-                <div class="dropdown-content">
-
-                    <a href="#predications">
-                        Prédications
-                    </a>
-
-                    <a href="#musiques">
-                        Musiques
-                    </a>
-
-                    <a href="#photos-cultes">
-                        Photos de cultes
-                    </a>
-
-                </div>
-
-            </div>
-
-            <!-- Menu Publications Déroulant -->
-
-            <div class="dropdown">
-
-                <a href="#publications" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                    Publications ▼
-                </a>
-
-                <div class="dropdown-content">
-
-                    <a href="#brochures">
-                        Brochures
-                    </a>
-
-                    <a href="#bible">
-                        Bible
-                    </a>
-
-                </div>
-
-            </div>
-
-            <a href="#contact" style="color: white; text-decoration: none; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-                Contactez-nous
-            </a>
-
-        </nav>
-
-        <!-- Bouton En Direct à l'extrême droite -->
-
-       <a href="https://youtube.com" target="_blank" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; color: white; gap: 2px;">
-
-            <svg viewBox="0 0 24 24" fill="white" style="width: 32px; height: 32px;">
-
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
-
-            </svg>
-
-            <span style="font-size: 0.75rem; font-weight: 500;">
-                En direct
-            </span>
-
-        </a>
-
     </header>
 
+    <main class="app-container">
 
-    <main>
-
-        <!-- GRANDE BANNIÈRE D'ACCUEIL PRÉSENTATION -->
-
-        <section id="accueil" style="display: flex; align-items: center; justify-content: space-between; padding: 60px 40px; background: linear-gradient(135deg, #ffffff 0%, #eef6fc 50%, #ffffff 100%); gap: 30px; min-height: 400px;">
-
-            <div style="flex: 1; display: flex; justify-content: center;">
-
-                <img src="logo.png" alt="Trophée de Grâce Logo" style="width: 100%; max-width: 240px; height: auto; border-radius: 50%; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-
+        <!-- ZONE LOGO ET APPARENCE ÉPURÉE (Sans le long texte de bienvenue) -->
+        <section class="hero-section">
+            <div class="logo-wrapper">
+                <img src="logo.png" alt="Logo TGT" class="main-logo">
             </div>
+            
+            <!-- BARRE DE RECHERCHE GLOBALE -->
+            <div class="search-box">
+                <input type="text" id="global-search" placeholder="Rechercher un cantique, une prédication, un verset...">
+                <button type="button" class="search-btn">🔍</button>
+            </div>
+        </section>
 
-            <div style="flex: 2; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px;">
+        <!-- GRILLE DE NAVIGATION EN FORME DE DOSSIERS -->
+        <section class="folder-grid">
 
-                <h2 style="font-size: 1.6rem; color: #475569; letter-spacing: 3px; margin: 0; font-weight: 500;">
-                    BIENVENUE
-                    <br>
-                    <span style="font-size: 1rem; color: #64748b; letter-spacing: 1px;">
-                        SUR LE SITE DE
-                    </span>
-                </h2>
+            <!-- Dossier Actualités -->
+            <a href="actualite.html" class="folder-card">
+                <div class="folder-icon-box">📰</div>
+                <span class="folder-title">Actualités</span>
+            </a>
 
-                <h1 style="font-size: 3rem; color: #0b4c8c; font-weight: 800; margin: 0; text-transform: uppercase; letter-spacing: 1px; line-height: 1.2;">
-                    Trophée de Grâce
-                </h1>
+            <!-- Dossier Services / Église -->
+            <a href="services.html" class="folder-card">
+                <div class="folder-icon-box">⛪</div>
+                <span class="folder-title">Services & Église</span>
+            </a>
 
-                <div style="background-color: #0b4c8c; color: white; padding: 25px 30px; border-radius: 20px; max-width: 520px; box-shadow: 0 10px 30px rgba(11, 76, 140, 0.25); margin-top: 10px;">
+            <!-- Dossier Multimédia (Prédications, Musiques, Photos) -->
+            <a href="multimedia.html" class="folder-card">
+                <div class="folder-icon-box">🎵</div>
+                <span class="folder-title">Multimédias</span>
+            </a>
 
-                    <p style="margin: 0; font-size: 1.05rem; line-height: 1.6; font-weight: 500; font-style: italic;">
-                        « Nous sommes une église interdenominationnelle qui croit au Seigneur Jésus-Christ comme le seul vrai Dieu et en William Marrion Branham comme son prophète. »
-                    </p>
+            <!-- Dossier Publications (Brochures) -->
+            <a href="publications.html" class="folder-card">
+                <div class="folder-icon-box">📚</div>
+                <span class="folder-title">Publications</span>
+            </a>
 
+            <!-- PAGE DÉDIÉE DE LA BIBLE (Prend toute la largeur en bas) -->
+            <a href="bible.html" class="folder-card full-width-card bible-theme">
+                <div class="folder-icon-box">📖</div>
+                <div class="card-text">
+                    <span class="folder-title">La Sainte Bible</span>
+                    <small>Accéder aux Écritures et lectures</small>
                 </div>
+            </a>
 
-            </div>
-
-            <div style="flex: 1; display: flex; justify-content: center;">
-
-                <img src="branham.png" alt="William Marrion Branham" style="width: 100%; max-width: 240px; height: auto; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.12); object-fit: cover;">
-
-            </div>
+            <!-- Lien direct pour le flux YouTube en direct -->
+            <a href="https://youtube.com" target="_blank" class="folder-card full-width-card live-theme">
+                <div class="folder-icon-box">🔴</div>
+                <div class="card-text">
+                    <span class="folder-title">Culte en Direct</span>
+                    <small>Suivez-nous sur YouTube</small>
+                </div>
+            </a>
 
         </section>
 
-
-        <!-- SECTION ACTUALITÉ -->
-
-        <section id="actualite" style="padding: 60px 40px; max-width: 1100px; margin: 0 auto; font-family: sans-serif;">
-
-            <h2 style="font-size: 2rem; color: #0b4c8c; border-bottom: 3px solid #00bfff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; font-weight: 800;">
-                Dernières Actualités
-            </h2>
-
-            <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
-
-                <div style="background: white; width: 100%; max-width: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: flex; flex-direction: column; border: 1px solid #e2e8f0;">
-
-                    <div style="background-color: #0b4c8c; color: white; padding: 30px 20px; text-align: center; font-weight: bold; font-size: 1.2rem;">
-                        📅 CULTE DOMINICAL
-                    </div>
-
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 12px;">
-
-                        <span style="color: #ff4500; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-                            📢 ANNONCE OFFICIELLE
-                        </span>
-
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b; line-height: 1.3;">
-                            Grand Culte d'Adoration et d'Enseignement
-                        </h3>
-
-                        <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Nous invitons chaleureusement tous les frères et sœurs à prendre part à notre glorieux culte de ce <strong>Dimanche 13 Septembre 2026</strong>. Venons adorer le Seigneur Jésus-Christ dans l'unité de la foi.
-                        </p>
-
-                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #f1f5f9; font-size: 0.9rem; color: #334155;">
-
-                            ⏰ <strong>Horaire :</strong>
-                            09h00 à 12h00
-                            <br>
-
-                            📍 <strong>Lieu :</strong>
-                            Au trophée de grace Tabernacle (KisangaL’HIRDC)
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div style="background: white; width: 100%; max-width: 350px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); display: flex; flex-direction: column; border: 1px solid #e2e8f0;">
-
-                    <div style="background-color: #07325d; color: white; padding: 30px 20px; text-align: center; font-weight: bold; font-size: 1.2rem;">
-                        📖 BROCHURES & MESSAGES
-                    </div>
-
-                    <div style="padding: 20px; flex-grow: 1; display: flex; flex-direction: column; gap: 12px;">
-
-                        <span style="color: #00bfff; font-size: 0.85rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
-                            💡 MÉDITATION
-                        </span>
-
-                        <h3 style="margin: 0; font-size: 1.3rem; color: #1e293b; line-height: 1.3;">
-                            Lecture de la Parole Enseignée
-                        </h3>
-
-                        <p style="color: #64748b; font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            Redécouvrez les précieux enseignements du prophète William Marrion Branham à travers nos lectures quotidiennes et preparations personnelles en semaine.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SECTION À PROPOS ET HISTORIQUE (RESTAURÉE ET INTACTE EN DEUX COLONNES) -->
-
-        <section id="propos" style="padding: 60px 40px; background-color: #eef6fc; font-family: sans-serif;">
-
-            <div style="max-width: 1100px; margin: 0 auto;">
-
-                <!-- TITRE DE L'HISTORIQUE -->
-
-                <h2 style="font-size: 2rem; color: #0b4c8c; border-bottom: 3px solid #00bfff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; font-weight: 800;">
-                    HISTORIQUE DE L'ÉGLISE
-                </h2>
-
-                <!-- TEXTES OFFICIELS ET PHOTO DU PASTEUR -->
-
-                <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 40px;">
-
-                    <!-- Textes à gauche -->
-
-                    <div style="flex: 2; min-width: 300px;">
-
-                        <p style="font-size: 1.15rem; line-height: 1.8; color: #334155; margin-bottom: 15px; text-align: justify;">
-                            Le Trophée de Grâce Tabernacle est une église interdénominationnelle qui croit au Seigneur Jésus-Christ comme le seul vrai Dieu et en William Marrion Branham comme son prophète.
-                        </p>
-
-                        <p style="font-size: 1.15rem; line-height: 1.8; color: #334155; text-align: justify;">
-                            Situé derrière la boulangerie Le Roi sur la route Kipushi, au Quartier Kisanga dans la commune Annexe, les portes de notre temple sont ouvertes généralement tous les jeudis, samedis et dimanches pour vous accueillir chaleureusement. TGT est dirigé, sous la conduite du Saint-Esprit, par le Révérend ANACLET MBUNDA, son pasteur.
-                        </p>
-
-                    </div>
-
-                    <!-- Bloc Photo Pasteur à droite -->
-
-                    <div style="flex: 1; min-width: 260px; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); text-align: center; border-top: 4px solid #0b4c8c;">
-
-                        <img src="pasteur.jpg" alt="Révérend ANACLET MBUNDA" style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border: 3px solid #eef6fc;">
-
-                        <h3 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.2rem; font-weight: 700;">
-                            Rév. ANACLET MBUNDA
-                        </h3>
-
-                        <p style="color: #00bfff; font-weight: bold; margin: 0 0 5px 0; font-size: 0.85rem; text-transform: uppercase;">
-                            Pasteur Responsable
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- BRANCHE MULTIMÉDIA : MUSIQUES ET PHOTOS -->
-
-        <section id="multimedia" style="padding: 60px 40px; max-width: 1100px; margin: 0 auto; font-family: sans-serif;">
-
-            <h2 style="font-size: 2rem; color: #0b4c8c; border-bottom: 3px solid #00bfff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; font-weight: 800;">
-                MULTIMÉDIA
-            </h2>
-
-            <!-- Sous-branche : Musiques & Cantiques -->
-
-            <div id="musiques" style="margin-bottom: 50px;">
-
-                <h3 style="color: #07325d; border-left: 4px solid #00bfff; padding-left: 10px; font-size: 1.3rem; margin-bottom: 20px; text-transform: uppercase;">
-                    🎵 MUSIQUES & CANTIQUES
-                </h3>
-
-                <p style="color: #64748b; font-style: italic;">
-                    Les cantiques d'adoration de notre chorale seront bientôt disponibles ici pour l'écoute.
-                </p>
-
-                <!-- C'est ici que nous apprendrons à ajouter vos fichiers audio (.mp3) plus tard -->
-
-                <!-- Bloc Cantique Audio du Frère Serge Kalala -->
-
-                <div style="background: white; border-radius: 12px; padding: 20px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-top: 15px; flex-wrap: wrap;">
-
-                    <!-- Infos du Cantique à gauche -->
-
-                    <div style="display: flex; align-items: center; gap: 15px;">
-
-                        <span style="font-size: 2.2rem;">🎵</span>
-
-                        <div>
-
-                            <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">
-                                Attitude
-                            </h4>
-
-                            <span style="color: #64748b; font-size: 0.9rem; font-weight: 500;">
-                                Chanté par le Fr. Serge Kalala
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Bloc Vidéo du Frère Serge Kalala -->
-
-                <div style="background: white; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; gap: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; margin-top: 15px; max-width: 500px; margin-left: auto; margin-right: auto;">
-
-                    <!-- Infos du Cantique en haut -->
-
-                    <div style="display: flex; align-items: center; gap: 15px;">
-
-                        <span style="font-size: 2.2rem;">🎥</span>
-
-                        <div>
-
-                            <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">
-                                Attitude (Clip/Vidéo)
-                            </h4>
-
-                            <span style="color: #64748b; font-size: 0.9rem; font-weight: 500;">
-                                Fr. Serge Kalala
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Le Lecteur Vidéo HTML5 officiel -->
-
-                    <div style="position: relative; width: 100%; border-radius: 8px; overflow: hidden; background-color: #000; display: flex; justify-content: center;">
-
-                        <video controls style="width: 100%; height: auto; max-height: 280px; display: block;">
-
-                            <source src="attitude.mp4" type="video/mp4">
-
-                            Votre navigateur ne supporte pas la lecture de vidéos.
-
-                        </video>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Sous-branche : Photos de Cultes -->
-
-            <div id="photos-cultes">
-
-                <h3 style="color: #07325d; border-left: 4px solid #00bfff; padding-left: 10px; font-size: 1.3rem; margin-bottom: 20px; text-transform: uppercase;">
-                    📸 PHOTOS DES CULTES
-                </h3>
-
-                <p style="color: #64748b; font-style: italic; margin-bottom: 20px;">
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- Galerie de photos des cultes -->
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-
-            <!-- Photo 1 -->
-
-            <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-
-                <img src="culte1.jpg" alt="Moment de culte 1" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
-
-                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #64748b; text-align: center;">
-                    Réunion d'Adoration
-                </p>
-
-            </div>
-
-
-            <!-- Photo 2 -->
-
-            <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-
-                <img src="culte2.jpg" alt="nos debut2" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
-
-                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #64748b; text-align: center;">
-                    Moments de Prière
-                </p>
-
-            </div>
-
-
-            <!-- Photo 3 -->
-
-            <div style="background: white; padding: 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-
-                <img src="culte3.jpg" alt="Moment de culte 3" style="width: 100%; height: 180px; object-fit: cover; border-radius: 6px;">
-
-                <p style="margin: 8px 0 0 0; font-size: 0.9rem; color: #64748b; text-align: center;">
-                    Écoute de la Parole
-                </p>
-
-            </div>
-
+        <!-- CONTROLEUR DE VERSION PAYS (Pour vos tests d'intégration payant/gratuit) -->
+        <div class="version-toggle-zone">
+            <p>Statut actuel : <strong id="account-text" style="color: #666;">Gratuit</strong></p>
+            <button onclick="changerVersion()" class="action-btn">Simuler l'achat (Passer en Premium)</button>
         </div>
-
-
-        <!-- SECTION PUBLICATIONS -->
-
-        <section id="publications" style="padding: 60px 40px; background-color: #f1f5f9; font-family: sans-serif;">
-
-            <div style="max-width: 1100px; margin: 0 auto;">
-
-                <h2 style="font-size: 2rem; color: #0b4c8c; border-bottom: 3px solid #00bfff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; font-weight: 800;">
-                    PUBLICATIONS
-                </h2>
-
-
-                <!-- Sous-branche : Brochures -->
-
-                <div id="brochures" style="margin-bottom: 40px;">
-
-                    <h3 style="color: #07325d; border-left: 4px solid #00bfff; padding-left: 10px; font-size: 1.3rem; margin-bottom: 20px;">
-                        📚 Brochures du Message
-                    </h3>
-
-                    <p style="color: #64748b; font-style: italic; margin-bottom: 20px;">
-                        Espace dédié au téléchargement des brochures du prophète William Marrion Branham.
-                    </p>
-
-
-                    <!-- Carte La Foi Primitive -->
-
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; flex-wrap: wrap; max-width: 650px; margin-bottom: 20px;">
-
-                        <!-- Infos de la brochure à gauche -->
-
-                        <div style="display: flex; align-items: center; gap: 15px;">
-
-                            <span style="font-size: 2.5rem;">📄</span>
-
-                            <div>
-
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">
-                                    La Foi Primitive
-                                </h4>
-
-                                <span style="color: #64748b; font-size: 0.85rem;">
-                                    Format : PDF | Langue : Français
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Les deux options à droite : Lecture et Téléchargement -->
-
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-
-                            <!-- Bouton Lire en ligne -->
-
-                            <a href="la_foi.pdf" target="_blank" style="background-color: #00bfff; color: white; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center;">
-                                📖 Lire en ligne
-                            </a>
-
-                            <!-- Bouton Télécharger -->
-
-                            <a href="la_foi.pdf" download style="background-color: #0b4c8c; color: white; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center;">
-                                📥 Télécharger
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Deuxième Carte : Le Grenier du Message -->
-
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; flex-wrap: wrap; max-width: 650px; margin-top: 20px;">
-
-                        <!-- Infos de la brochure à gauche -->
-
-                        <div style="display: flex; align-items: center; gap: 15px;">
-
-                            <span style="font-size: 2.5rem;">📄</span>
-
-                            <div>
-
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">
-                                    Le Grenier du Message
-                                </h4>
-
-                                <span style="color: #64748b; font-size: 0.85rem;">
-                                    Format : PDF | Enseignements spirituels
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Les deux options à droite : Lecture et Téléchargement -->
-
-                                            <div style="display: flex; gap: 10px; width: 100%;">
-                                <!-- Bouton relié directement à la bibliothèque officielle de Branham.fr -->
-                                <a href="https://branham.fr" target="_blank" style="flex: 1; background-color: #0b4c8c; color: white; padding: 12px 10px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.85rem; text-align: center; box-shadow: 0 2px 5px rgba(11,76,140,0.15);">
-                                    📖 Ouvrir Le Grenier du Message
-                                </a>
-                            </div>
-         </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Sous-branche : La Sainte Bible -->
-
-                <div id="bible">
-
-                    <h3 style="color: #07325d; border-left: 4px solid #00bfff; padding-left: 10px; font-size: 1.3rem; margin-bottom: 20px; text-transform: uppercase;">
-                        📖 LA SAINTE BIBLE
-                    </h3>
-
-                    <p style="color: #64748b; font-style: italic; margin-bottom: 20px;">
-                        Méditez la Parole de Dieu quotidiennement. Accédez au texte intégral de l'Ancien et du Nouveau Testament.
-                    </p>
-
-
-                    <!-- Carte interactive pour votre Bible PDF -->
-
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; flex-wrap: wrap; max-width: 650px;">
-
-                        <!-- Infos à gauche -->
-
-                        <div style="display: flex; align-items: center; gap: 15px;">
-
-                            <span style="font-size: 2.5rem;">📖</span>
-
-                            <div>
-
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.15rem; font-weight: 700;">
-                                    La Sainte Bible - Louis Segond
-                                </h4>
-
-                                <span style="color: #64748b; font-size: 0.85rem;">
-                                    Format : PDF | Traduction Éditée (1910)
-                                </span>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Boutons d'accès à droite -->
-
-                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-
-                            <!-- Option Lire (ouvre votre PDF) -->
-
-                            <a href="bible_lsg.pdf" target="_blank" style="background-color: #00bfff; color: white; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center;">
-                                📖 Lire en ligne
-                            </a>
-
-                            <!-- Option Télécharger -->
-
-                            <a href="bible_lsg.pdf" download style="background-color: #0b4c8c; color: white; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center;">
-                                📥 Télécharger
-                            </a>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-        <!-- SECTION CONTACTEZ-NOUS AVEC FORMULAIRE PROFESSIONNEL -->
-                     <!-- SECTION TÉLÉCHARGEMENT DES APPLICATIONS OFFICIELLES (AVEC OPTIMISATION MAC) -->
-             <!-- SECTION TÉLÉCHARGEMENT DES APPLICATIONS OFFICIELLES (CORRIGÉE) -->
-        <section id="applications" style="padding: 60px 40px; background-color: #f8fafc; font-family: sans-serif;">
-            <div style="max-width: 1100px; margin: 0 auto;">
-                <h2 style="font-size: 2rem; color: #0b4c8c; border-bottom: 3px solid #00bfff; padding-bottom: 10px; margin-bottom: 30px; text-transform: uppercase; font-weight: 800;">Nos Applications Officielles</h2>
-                <p style="color: #64748b; font-style: italic; margin-bottom: 30px;">Téléchargez l'application officielle de l'église pour rester connecté sur tous vos appareils.</p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                    
-                    <!-- Carte Application Android -->
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <span style="font-size: 3rem;">📱</span>
-                            <div>
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.2rem; font-weight: 700;">Application Mobile Android</h4>
-                                <span style="color: #64748b; font-size: 0.85rem;">Format : APK | Pour smartphones et tablettes</span>
-                            </div>
-                        </div>
-                        <a href="tgt_android.apk" download style="background-color: #0b4c8c; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center; display: block; box-shadow: 0 2px 5px rgba(11,76,140,0.2);">
-                            📥 Télécharger pour Android
-                        </a>
-                    </div>
-
-                    <!-- Carte Application Windows PC -->
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <span style="font-size: 3rem;">💻</span>
-                            <div>
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.2rem; font-weight: 700;">Application Ordinateur Windows</h4>
-                                <span style="color: #64748b; font-size: 0.85rem;">Format : MSIX | Pour PC de bureau</span>
-                            </div>
-                        </div>
-                        <a href="tgt_windows.msix" download style="background-color: #00bfff; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center; display: block;">
-                            📥 Télécharger pour Windows (PC)
-                        </a>
-                    </div>
-
-                    <!-- Carte Application Apple macOS (Bien séparée) -->
-                    <div style="background: white; border-radius: 12px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <span style="font-size: 3rem;">🍎</span>
-                            <div>
-                                <h4 style="margin: 0 0 4px 0; color: #1e293b; font-size: 1.2rem; font-weight: 700;">Application Apple macOS</h4>
-                                <span style="color: #64748b; font-size: 0.85rem;">Installation directe instantanée</span>
-                            </div>
-                        </div>
-                        <p style="margin: 0; font-size: 0.85rem; color: #475569; line-height: 1.5; text-align: justify; background-color: #f1f5f9; padding: 10px; border-radius: 6px;">
-                            <strong>Pour installer sur Mac :</strong> Ouvrez ce site dans <em>Safari</em> ou <em>Chrome</em> sur votre Mac, cliquez sur l'icône de partage en haut à droite, puis sélectionnez <strong>« Ajouter au Dock »</strong> ou <strong>« Installer »</strong>.
-                        </p>
-                        <a href="#" onclick="alert('Pour installer l\'application sur votre Mac, suivez les instructions écrites juste au-dessus depuis votre navigateur Safari ou Chrome !'); return false;" style="background-color: #475569; color: white; padding: 12px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; text-align: center; display: block;">
-                            🍏 Guide d'installation Mac
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-
-        <section id="contact" style="padding: 60px 40px; background-color: #0b4c8c; color: white; font-family: sans-serif;">
-            <div style="max-width: 1100px; margin: 0 auto; display: flex; gap: 50px; flex-wrap: wrap; align-items: flex-start;">
-                
-                <!-- Coordonnées de l'église -->
-                <div style="flex: 1; min-width: 300px;">
-                    <h3 style="font-size: 1.8rem; margin: 0 0 20px 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #00bfff;">Notre Adresse & Contacts</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.7; color: #e2e8f0; margin-bottom: 25px; text-align: justify;">
-                        <strong>Adresse :</strong> RDC, Ville de Lubumbashi, Commune Annexe, Quartier Kisanga, Route Kipushi (Réf : Derrière la boulangerie Le Roi)
-                    </p>
-                    <div style="display: flex; flex-direction: column; gap: 15px; font-size: 1.05rem;">
-                        <span>📞 <strong>Téléphone :</strong> <a href="tel:+243854014426" style="color: #00bfff; font-weight: bold; text-decoration: none;">+243 854 014 426</a></span>
-                        <span>✉️ <strong>Email :</strong> <a href="mailto:tropheedegracetabernacle038@gmail.com" style="color: #00bfff; font-weight: bold; text-decoration: none;">tropheedegracetabernacle038@gmail.com</a></span>
-                    </div>
-                </div>
-
-                <!-- Formulaire de contact pour écrire à l'église -->
-                <div style="flex: 1; min-width: 300px; background-color: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
-                    <h4 style="margin: 0 0 20px 0; color: #1e293b; font-size: 1.3rem; font-weight: 700; text-align: center;">Envoyez-nous un Message</h4>
-                    
-                    <form action="mailto:tropheedegracetabernacle038@gmail.com" method="post" enctype="text/plain" style="display: flex; flex-direction: column; gap: 15px;">
-                        
-                        <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label for="nom" style="color: #475569; font-weight: 600; font-size: 0.9rem;">Nom complet :</label>
-                            <input type="text" id="nom" name="Nom" placeholder="Votre nom et prénom" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; box-sizing: border-box;">
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label for="email" style="color: #475569; font-weight: 600; font-size: 0.9rem;">Adresse Email :</label>
-                            <input type="email" id="email" name="Email" placeholder="votre.email@exemple.com" required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; box-sizing: border-box;">
-                        </div>
-
-                        <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label for="message" style="color: #475569; font-weight: 600; font-size: 0.9rem;">Votre message ou sujet de prière :</label>
-                            <textarea id="message" name="Message" rows="5" placeholder="Écrivez votre message ici..." required style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-family: inherit; resize: vertical; box-sizing: border-box;"></textarea>
-                        </div>
-
-                        <button type="submit" style="background-color: #0b4c8c; color: white; padding: 12px; border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; margin-top: 10px; width: 100%;">
-                            🕊️ Envoyer le Message
-                        </button>
-                        
-                    </form>
-                </div>
-
-            </div>
-        </section>
 
     </main>
 
-</body>
+    <script>
+        // Logique de simulation pour le mode Gratuit / Payant
+        function changerVersion() {
+            const badge = document.getElementById('badge-statut');
+            const text = document.getElementById('account-text');
+            
+            if (badge.classList.contains('free-badge')) {
+                badge.classList.remove('free-badge');
+                badge.classList.add('premium-badge');
+                badge.innerText = "Version Premium";
+                text.innerText = "Premium Activé (Accès illimité)";
+                text.style.color = "#d69e2e";
+            } else {
+                badge.classList.remove('premium-badge');
+                badge.classList.add('free-badge');
+                badge.innerText = "Version Gratuite";
+                text.innerText = "Gratuit";
+                text.style.color = "#666";
+            }
+        }
+    </script>
 
+</body>
 </html>
-```

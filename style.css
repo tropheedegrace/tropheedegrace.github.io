@@ -1,21 +1,221 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #222;
-    margin: 0;
-    padding: 30px;
+/* Palette inspirée du logo Or Doré / Chocolat */
+:root {
+    --primary-dark: #8a6d3b;    /* Marron/Or Foncé */
+    --gold-bright: #d69e2e;     /* Or brillant */
+    --bg-app: #fcf9f2;          /* Fond crème léger de l'application */
+    --text-main: #3a352a;       /* Couleur de texte principale */
+    --card-bg: #ffffff;
 }
 
-h1 {
-    color: #8b0000;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* En-tête fixe type Application native */
+.app-header {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.menu-icon {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Badges dynamiques de statut */
+.status-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.free-badge {
+    background-color: #718096;
+}
+
+.premium-badge {
+    background-color: var(--gold-bright);
+    box-shadow: 0 0 8px rgba(214, 158, 46, 0.6);
+}
+
+/* Conteneur type écran de téléphone */
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Zone Logo épurée */
+.hero-section {
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+
+.main-logo {
+    max-width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold-bright);
+    box-shadow: 0 6px 16px rgba(138, 109, 59, 0.25);
+}
+
+/* Barre de recherche intégrée */
+.search-box {
+    display: flex;
+    background: white;
+    border: 2px solid #e8e2d5;
+    border-radius: 30px;
+    padding: 8px 18px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 0.95rem;
+    background: transparent;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Grille de Dossiers */
+.folder-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.folder-card {
+    background: var(--card-bg);
+    border: 1px solid #ebdcb9;
+    border-radius: 16px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.folder-card:active, .folder-card:hover {
+    transform: scale(0.98);
+    box-shadow: 0 2px 5px rgba(138, 109, 59, 0.1);
+    background-color: #fffdf9;
+}
+
+.folder-icon-box {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.folder-title {
+    font-weight: 600;
+    font-size: 0.95rem;
     text-align: center;
 }
 
-h2 {
-    color: #333;
+/* Dossiers Spéciaux Pleine Largeur */
+.full-width-card {
+    grid-column: span 2;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 18px 20px;
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.6;
+.full-width-card .folder-icon-box {
+    margin-bottom: 0;
+    margin-right: 18px;
+    font-size: 2.4rem;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text small {
+    color: #8c826e;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+/* Theme spécifique pour la Bible */
+.bible-theme {
+    background: linear-gradient(135deg, var(--primary-dark), #66502b);
+    border: none;
+}
+
+.bible-theme .folder-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+.bible-theme .card-text small {
+    color: var(--gold-bright);
+}
+
+/* Theme spécifique pour le direct YouTube */
+.live-theme {
+    border-left: 5px solid #ff0000;
+}
+
+/* Zone optionnelle de test pour la version */
+.version-toggle-zone {
+    margin-top: 35px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px dashed var(--gold-bright);
+}
+
+.action-btn {
+    background: var(--primary-dark);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
 }

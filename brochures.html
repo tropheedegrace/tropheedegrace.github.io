@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brochures du Prophète - TGT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .section-title {
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: #8c826e;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .brochure-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .brochure-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 16px 15px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+            border-left: 4px solid var(--gold-bright);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+        .brochure-card:active {
+            transform: scale(0.98);
+        }
+        .icon-box {
+            font-size: 1.8rem;
+            margin-right: 15px;
+        }
+        .brochure-details {
+            flex: 1;
+        }
+        .brochure-details h3 {
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+            color: var(--primary-dark);
+        }
+        .brochure-details p {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        .download-badge {
+            font-size: 0.7rem;
+            background: #ffebeb;
+            color: #cc0000;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .collection-badge {
+            background: #eef6fc;
+            color: #0b4c8c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre supérieure de navigation -->
+    <header class="app-header">
+        <div class="header-content">
+            <a href="publications.html" style="color: white; text-decoration: none; font-size: 1.2rem;">⬅</a>
+            <h1>Brochures & Messages</h1>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="app-container">
+        
+        <!-- SECTION COLLECTIONS COMPLÈTES (EN BLOC) -->
+        <div class="section-title">Collections Complètes</div>
+        <div class="brochure-list">
+            
+            <!-- Lien vers le fichier global ou le dossier du Grenier du Message -->
+            <a href="Le Grenier du Message.pdf" target="_blank" class="brochure-card" style="border-left-color: #0b4c8c;">
+                <div class="icon-box">📚</div>
+                <div class="brochure-details">
+                    <h3>Le Grenier du Message (Intégral)</h3>
+                    <p>Collection globale de toutes les brochures • PDF</p>
+                </div>
+                <span class="download-badge collection-badge">Ouvrir le Bloc</span>
+            </a>
+            
+        </div>
+
+        <!-- SECTION DOSSIERS ET SÉLECTIONS SIMPLES -->
+        <div class="section-title">Brochures Simples & Fichiers</div>
+        <div class="brochure-list">
+
+            <!-- Fichier individuel la_foi.pdf -->
+            <a href="la_foi.pdf" target="_blank" class="brochure-card">
+                <div class="icon-box">📕</div>
+                <div class="brochure-details">
+                    <h3>La Foi Transmise aux Saints</h3>
+                    <p>Message de W. M. Branham • Version PDF</p>
+                </div>
+                <span class="download-badge">Ouvrir</span>
+            </a>
+
+            <!-- Fichier individuel lafoi.pdf -->
+            <a href="lafoi.pdf" target="_blank" class="brochure-card">
+                <div class="icon-box">📕</div>
+                <div class="brochure-details">
+                    <h3>La Foi (Deuxième Édition)</h3>
+                    <p>Message de W. M. Branham • Version PDF</p>
+                </div>
+                <span class="download-badge">Ouvrir</span>
+            </a>
+
+            <!-- Accès au sous-dossier général des brochures simples si vous en ajoutez d'autres -->
+            <a href="./BROCHURES/" target="_blank" class="brochure-card">
+                <div class="icon-box">📁</div>
+                <div class="brochure-details">
+                    <h3>Explorer le dossier BROCHURES</h3>
+                    <p>Accéder directement aux autres fichiers ajoutés</p>
+                </div>
+                <span class="download-badge" style="background:#e8e2d5; color:var(--text-main);">Dossier</span>
+            </a>
+
+        </div>
+    </main>
+
+</body>
+</html>
