@@ -1,129 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Trophée de Grâce Tabernacle</title>
+
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Liaison avec le fichier de configuration de l'application -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8a6d3b">
-    
-    <!-- Script pour activer l'application sur le téléphone -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('./sw.js')
-          .then(() => console.log('Application TGT prête !'))
-          .catch((err) => console.log('Erreur application:', err));
-      }
-    </script>
 </head>
 
 <body>
 
-    <!-- BARRE SUPÉRIEURE APPLICATION FIXE -->
-    <header class="app-header">
-        <div class="header-content">
-            <span class="menu-icon">☰</span>
-            <h1>Trophée de Grâce Tabernacle</h1>
-            <!-- Badge dynamique de version -->
-            <span id="badge-statut" class="status-badge free-badge">Version Gratuite</span>
-        </div>
+    <!-- EN-TÊTE DU SITE -->
+    <header>
+        <h1>Trophée de Grâce Tabernacle</h1>
+
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">À propos</a>
+            <a href="#">Programmes</a>
+            <a href="#">Prédications</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
-    <main class="app-container">
-
-        <!-- ZONE LOGO ET APPARENCE ÉPURÉE (Sans le long texte de bienvenue) -->
-        <section class="hero-section">
-            <div class="logo-wrapper">
-                <img src="logo.png" alt="Logo TGT" class="main-logo">
-            </div>
-            
-            <!-- BARRE DE RECHERCHE GLOBALE -->
-            <div class="search-box">
-                <input type="text" id="global-search" placeholder="Rechercher un cantique, une prédication, un verset...">
-                <button type="button" class="search-btn">🔍</button>
-            </div>
+    <main>
+        <!-- SECTION BIENVENUE -->
+        <section id="accueil" style="padding: 40px; text-align: center; background-color: #f4f4f4;">
+            <h2>Bienvenue au Trophée de Grâce Tabernacle</h2>
+            <p>Un lieu de foi, de partage et de communion fraternelle.</p>
         </section>
 
-        <!-- GRILLE DE NAVIGATION EN FORME DE DOSSIERS -->
-        <section class="folder-grid">
-
-            <!-- Dossier Actualités -->
-            <a href="actualite.html" class="folder-card">
-                <div class="folder-icon-box">📰</div>
-                <span class="folder-title">Actualités</span>
-            </a>
-
-            <!-- Dossier Services / Église -->
-            <a href="services.html" class="folder-card">
-                <div class="folder-icon-box">⛪</div>
-                <span class="folder-title">Services & Église</span>
-            </a>
-
-            <!-- Dossier Multimédia (Prédications, Musiques, Photos) -->
-            <a href="multimedia.html" class="folder-card">
-                <div class="folder-icon-box">🎵</div>
-                <span class="folder-title">Multimédias</span>
-            </a>
-
-            <!-- Dossier Publications (Brochures) -->
-            <a href="publications.html" class="folder-card">
-                <div class="folder-icon-box">📚</div>
-                <span class="folder-title">Publications</span>
-            </a>
-
-            <!-- PAGE DÉDIÉE DE LA BIBLE (Prend toute la largeur en bas) -->
-            <a href="bible.html" class="folder-card full-width-card bible-theme">
-                <div class="folder-icon-box">📖</div>
-                <div class="card-text">
-                    <span class="folder-title">La Sainte Bible</span>
-                    <small>Accéder aux Écritures et lectures</small>
-                </div>
-            </a>
-
-            <!-- Lien direct pour le flux YouTube en direct -->
-            <a href="https://youtube.com" target="_blank" class="folder-card full-width-card live-theme">
-                <div class="folder-icon-box">🔴</div>
-                <div class="card-text">
-                    <span class="folder-title">Culte en Direct</span>
-                    <small>Suivez-nous sur YouTube</small>
-                </div>
-            </a>
-
+        <!-- SECTION PROGAMES / CULTES -->
+        <section id="programmes" style="padding: 40px;">
+            <h3>Nos Programmes & Réunions</h3>
+            <ul>
+                <li><strong>Culte de Dimanche :</strong> 09h00 - 12h00</li>
+                <li><strong>Enseignement en semaine :</strong> Mercredi à 17h00</li>
+                <li><strong>Prière d'intercession :</strong> Vendredi à 17h00</li>
+            </ul>
         </section>
-
-        <!-- CONTROLEUR DE VERSION PAYS (Pour vos tests d'intégration payant/gratuit) -->
-        <div class="version-toggle-zone">
-            <p>Statut actuel : <strong id="account-text" style="color: #666;">Gratuit</strong></p>
-            <button onclick="changerVersion()" class="action-btn">Simuler l'achat (Passer en Premium)</button>
-        </div>
-
     </main>
 
-    <script>
-        // Logique de simulation pour le mode Gratuit / Payant
-        function changerVersion() {
-            const badge = document.getElementById('badge-statut');
-            const text = document.getElementById('account-text');
-            
-            if (badge.classList.contains('free-badge')) {
-                badge.classList.remove('free-badge');
-                badge.classList.add('premium-badge');
-                badge.innerText = "Version Premium";
-                text.innerText = "Premium Activé (Accès illimité)";
-                text.style.color = "#d69e2e";
-            } else {
-                badge.classList.remove('premium-badge');
-                badge.classList.add('free-badge');
-                badge.innerText = "Version Gratuite";
-                text.innerText = "Gratuit";
-                text.style.color = "#666";
-            }
-        }
-    </script>
-
+    <footer style="text-align: center; padding: 20px; background-color: #333; color: white; margin-top: 50px;">
+        <p>&copy; 2026 Trophée de Grâce Tabernacle - Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
