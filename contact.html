@@ -3,29 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactez-nous - TGT</title>
+    <title>Contact & Soutien - TGT</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .contact-info-box { background: white; padding: 20px; border-radius: 14px; margin-bottom: 15px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
-        .info-row { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
-        .info-row:last-child { margin-bottom: 0; }
-        .info-icon { font-size: 1.5rem; }
-        .info-text h3 { font-size: 0.9rem; color: #777; font-weight: normal; margin: 0; }
-        .info-text p { font-size: 1rem; font-weight: bold; color: var(--primary-dark); margin: 2px 0 0 0; }
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 14px;
+            text-decoration: none;
+            color: var(--text-main);
+            border-left: 4px solid var(--gold-bright);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .contact-btn:active {
+            transform: scale(0.98);
+            background-color: #fffdf9;
+        }
         
-        .social-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
-        .btn-link { display: flex; align-items: center; justify-content: center; gap: 10px; background: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: bold; color: var(--text-main); box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
+        /* STYLE TRÈS PRO DES LOGOS EN COULEUR */
+        .contact-brand-logo {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            margin-right: 18px;
+            flex-shrink: 0;
+        }
         
-        .form-box { background: white; padding: 20px; border-radius: 14px; box-shadow: 0 2px 6px rgba(0,0,0,0.02); }
-        .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 12px; }
-        .form-group label { font-size: 0.85rem; font-weight: 600; }
-        .form-group input, .form-group textarea { padding: 10px; border: 1px solid #ebdcb9; border-radius: 8px; outline: none; font-size: 0.9rem; }
-        .form-group textarea { resize: none; height: 90px; }
-        .send-btn { width: 100%; background: var(--primary-dark); color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .contact-details {
+            flex: 1;
+        }
+        .contact-details h3 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+            color: var(--primary-dark);
+            font-weight: bold;
+        }
+        .contact-details p {
+            font-size: 0.8rem;
+            color: #777;
+            line-height: 1.4;
+        }
+        .arrow-go {
+            color: #cbd5e1;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Barre supérieure de navigation -->
     <header class="app-header">
         <div class="header-content">
             <a href="index.html" style="color: white; text-decoration: none; font-size: 1.2rem;">⬅</a>
@@ -35,52 +72,55 @@
     </header>
 
     <main class="app-container">
+        
+        <div style="font-size: 0.85rem; font-weight: bold; color: #8c826e; margin: 15px 0 5px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+            Secrétariat & Réseaux Officiels
+        </div>
 
-        <!-- COORDONNÉES OFFICIELLES DE L'ÉGLISE -->
-        <section class="contact-info-box">
-            <div class="info-row">
-                <div class="info-icon">📧</div>
-                <div class="info-text">
-                    <h3>Email Secrétariat</h3>
-                    <p style="font-size: 0.85rem; word-break: break-all;">tropheedegracetabernacle38@gmail.com</p>
-                </div>
-            </div>
-            <div class="info-row">
-                <div class="info-icon">📞</div>
-                <div class="info-text">
-                    <h3>Téléphone Administration</h3>
-                    <p>+243 854014426</p> <!-- Remplacez par votre vrai numéro -->
-                </div>
-            </div>
-        </section>
+        <div class="contact-container">
 
-        <!-- ACCÈS AUX RÉSEAUX SOCIAUX ET WHATSAPP -->
-        <section class="social-buttons">
-            <!-- Remplacer par votre lien complet WhatsApp -->
-            <a href="https://wa.me" target="_blank" class="btn-link" style="border-bottom: 3px solid #25D366;">
-                <span>💬 WhatsApp</span>
+            <!-- 🟢 VRAI LOGO WHATSAPP DIRECT -->
+            <a href="https://wa.me..." target="_blank" class="contact-btn" style="border-left-color: #25D366;">
+                <img src="whatsapp-logo.png" alt="WhatsApp TGT" class="contact-brand-logo">
+                <div class="contact-details">
+                    <h3>Contact WhatsApp</h3>
+                    <p>+243 997 334 629 • Envoyer un communiqué ou une remarque</p>
+                </div>
+                <span class="arrow-go">➔</span>
             </a>
-            <!-- Remplacer par le lien de votre page Facebook -->
-            <a href="https://facebook.com" target="_blank" class="btn-link" style="border-bottom: 3px solid #1877F2;">
-                <span>🔵 Facebook</span>
-            </a>
-        </section>
 
-        <!-- FORMULAIRE COMPATIBLE ENVOI EMAIL -->
-        <section class="form-box">
-            <h2 style="font-size: 1rem; margin-bottom: 15px; color: var(--primary-dark);">Envoyer une requête ou demande de prière</h2>
-            <form action="mailto:tropheedegracetabernacle38@gmail.com" method="GET" enctype="text/plain">
-                <div class="form-group">
-                    <label>Sujet du message</label>
-                    <input type="text" name="subject" placeholder="Ex: Requête de prière, Question..." required>
+            <!-- 🔵 VRAI LOGO FACEBOOK -->
+            <a href="https://facebook.com" target="_blank" class="contact-btn" style="border-left-color: #1877F2;">
+                <img src="facebook-logo.png" alt="Facebook TGT" class="contact-brand-logo">
+                <div class="contact-details">
+                    <h3>Page Facebook</h3>
+                    <p>Trophées de Grâce Tabernacle • Suivre nos publications</p>
                 </div>
-                <div class="form-group">
-                    <label>Votre message</label>
-                    <textarea name="body" placeholder="Écrivez votre message en détails ici..." required></textarea>
+                <span class="arrow-go">➔</span>
+            </a>
+
+            <!-- 🔴 VRAI LOGO YOUTUBE OFFICIELLE -->
+            <a href="https://youtube.com" target="_blank" class="contact-btn" style="border-left-color: #FF0000;">
+                <img src="youtube-logo.png" alt="YouTube TGT" class="contact-brand-logo">
+                <div class="contact-details">
+                    <h3>Chaîne YouTube</h3>
+                    <p>TROPHEE DE GRACE TABERNACLE /LUBUMBASHI • Cultes en vidéo</p>
                 </div>
-                <button type="submit" class="send-btn">Ouvrir l'e-mail pour envoyer</button>
-            </form>
-        </section>
+                <span class="arrow-go">➔</span>
+            </a>
+
+            <!-- ✉️ NOUVEAUTÉ : VRAI LOGO GMAIL / ADRESSE EMAIL -->
+            <!-- Remplacez 'contact.tgt@gmail.com' par la vraie adresse Gmail de votre secrétariat -->
+            <a href="mailto:contact.tgt@://gmail.com" class="contact-btn" style="border-left-color: #EA4335;">
+                <img src="gmail-logo.png" alt="Gmail TGT" class="contact-brand-logo">
+                <div class="contact-details">
+                    <h3>E-mail Officiel</h3>
+                    <p>trophéedegracetabernacle038.com • Nous écrire par courrier électronique</p>
+                </div>
+                <span class="arrow-go">➔</span>
+            </a>
+
+        </div>
 
     </main>
 
